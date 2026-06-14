@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDLanguage — предыдущие версии</title>
+  <style>
+    body {
+      background: #0e1422;
+      font-family: 'Inter', system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #e2e8f0;
+    }
+
+    .old-container {
+      max-width: 650px;
+      width: 100%;
+      background: rgba(15, 22, 40, 0.9);
+      backdrop-filter: blur(20px);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2rem;
+      border: 1px solid #37507e;
+      box-shadow: 0 20px 40px rgba(0, 20, 80, 0.5);
+      text-align: center;
+    }
+
+    .old-logo {
+      max-width: 130px;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 0 12px #4f7ec9);
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      color: #cfdfff;
+      margin-bottom: 0.3rem;
+    }
+
+    .version-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .version-item {
+      background: #1b2542;
+      border-radius: 2rem;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #2d4370;
+    }
+
+    .version-label {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #bdd3ff;
+    }
+
+    .old-download-btn {
+      background: #22345c;
+      padding: 0.65rem 1.8rem;
+      border-radius: 2.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid #4e75c0;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .old-download-btn:hover {
+      background: #2f4b8c;
+      border-color: #84a9ff;
+    }
+
+    .back-link {
+      color: #b0cbff;
+      margin-top: 1.8rem;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="old-container">
+    <!-- old-down-logo.png лежит в папке old -->
+    <img src="old-down-logo.png" alt="Old versions logo" class="old-logo">
+    <h1>📦 Старые версии</h1>
+    <p>Архив релизов DDLanguage. Выберите нужную версию для скачивания.</p>
+
+    <div class="version-list" id="versionList">
+      <!-- Версии добавляются здесь. Можно редактировать/добавлять новые блоки -->
+      <div class="version-item">
+        <span class="version-label">🔹 v1.0</span>
+        <a href="https://github.com/rond04kaegor-code/Debian-Distributions-Language/releases/download/release1.0/cppddl_1.0.0_amd64.deb" class="old-download-btn">Скачать .deb</a>
+      </div>
+
+    <!-- Шаблон для будущих кнопок (можно добавлять через JS или вручную) -->
+    <p style="color:#99aed4; margin-top:1rem;">Чтобы добавить новую версию, отредактируйте HTML или используйте скрипт ниже.</p>
+    
+    <a href="../download/index.html" class="back-link">← Актуальная версия</a>
+    <a href="../index.html" class="back-link" style="margin-left: 1.5rem;">🏠 На главную</a>
+  </div>
+
+  <script>
+    // Пример динамического добавления версии (для удобства):
+    // Можно раскомментировать и добавить новую запись при необходимости.
+    /*
+    const list = document.getElementById('versionList');
+    const newVersion = document.createElement('div');
+    newVersion.className = 'version-item';
+    newVersion.innerHTML = `
+      <span class="version-label">🔸 v1.0.1 (patch)</span>
+      <a href="https://github.com/.../cppddl_1.0.1_amd64.deb" class="old-download-btn">Скачать .deb</a>
+    `;
+    list.appendChild(newVersion);
+    */
+  </script>
+</body>
+</html>
