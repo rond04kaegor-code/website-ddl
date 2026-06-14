@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>DDLanguage — язык программирования проще Python в 10000 раз</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0a0f1e 0%, #12172f 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #eef5ff;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      background: rgba(18, 24, 42, 0.7);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(74, 144, 226, 0.25);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 45px -10px rgba(0, 160, 255, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      max-width: 180px;
+      height: auto;
+      filter: drop-shadow(0 0 18px #3b82f6);
+      transition: transform 0.3s ease;
+      margin-bottom: 0.75rem;
+    }
+
+    .logo:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #a5d8ff, #60a5fa, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #b9d0f0;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .badge {
+      background: #1e2b4f;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #add7ff;
+      display: inline-block;
+      margin: 0.5rem 0.2rem;
+      border: 1px solid #3f60a0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      color: #c6e2ff;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1.2rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(75, 130, 230, 0.35);
+      backdrop-filter: blur(10px);
+      transition: all 0.25s;
+    }
+
+    .feature-card:hover {
+      background: rgba(37, 56, 110, 0.35);
+      border-color: #5f9eff;
+      transform: translateY(-4px);
+      box-shadow: 0 15px 25px -10px #1e3a8a;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      color: #bfdbfe;
+      margin-bottom: 0.7rem;
+    }
+
+    code {
+      background: #0b1424;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      background: #020617;
+      padding: 1.2rem;
+      border-radius: 1.5rem;
+      overflow-x: auto;
+      border: 1px solid #334155;
+      font-size: 1rem;
+      color: #e2e8f0;
+      margin: 1.2rem 0;
+    }
+
+    .license-box {
+      background: #0f172a;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      color: #b9c7e0;
+      border: 1px solid #2d3a5e;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .btn {
+      background: #1e2f5a;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, #1f3b6b, #0f1f3d);
+      border: 1px solid #4369b0;
+      transition: all 0.25s;
+      box-shadow: 0 6px 18px rgba(0, 100, 255, 0.3);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #2a4b85, #14274a);
+      border-color: #7aa2f0;
+      box-shadow: 0 10px 22px #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #8fa4cc;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #9dc6ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-block">
+      <!-- logo.png должен лежать рядом с index.html -->
+      <img src="logo.png" alt="DDLanguage logo" class="logo">
+      <h1>DDLanguage</h1>
+      <div class="subtitle">Debian Distributions Language — проще Python в 10000 раз</div>
+      <span class="badge">GPLv3</span>
+      <span class="badge">Linux native</span>
+    </div>
+
+    <p style="font-size: 1.2rem; text-align: center; max-width: 700px; margin: 0 auto;">
+      Минималистичный язык программирования для Linux. Писать код должно быть так же просто, как говорить.
+    </p>
+
+    <h2>🚀 Почему DDL</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>📖 Синтаксис без лишнего</h3>
+        <p>Никаких точек с запятой, сложных импортов. Код читается как обычный текст.</p>
+      </div>
+      <div class="feature-card">
+        <h3>⚡ Мгновенная компиляция</h3>
+        <p>.ddl файл за секунды становится нативным бинарником. Чистый C++ на выходе.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🖥️ Встроенная графика</h3>
+        <p>Окно с кнопками — одной строкой. Браузер — три строки. GTK3 и WebKit под капотом.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📦 Экспорт в .deb</h3>
+        <p>Написали программу — собрали установочный пакет. Распространяйте как обычные deb-пакеты.</p>
+      </div>
+    </div>
+
+    <h2>💡 Как выглядит код</h2>
+    <pre>let greeting = "Привет, Debian!"
+say(greeting)
+
+createWindow("Моё приложение")
+createBrowser("https://wiki.debian.org")</pre>
+    <p>Переменные — <code>let</code>, вывод — <code>say()</code>, окно — <code>createWindow()</code>. Всё предсказуемо.</p>
+
+    <h2>👥 Для кого</h2>
+    <p>Для тех, кто устал от сложных языков. Для начинающих, которые хотят результат сразу. Для опытных, кому нужен быстрый инструмент под Linux.</p>
+
+    <h2>⚙️ Одна команда</h2>
+    <pre>cppddl</pre>
+    <p>Установка, компиляция, запуск и экспорт — всё через единственную программу. Никаких виртуальных окружений.</p>
+
+    <div class="btn-group">
+      <a href="download/index.html" class="btn">📥 Скачать последнюю версию</a>
+      <a href="old/index.html" class="btn">🗂️ Предыдущие версии</a>
+      <a href="https://github.com/rond04kaegor-code/Debian-Distributions-Language" class="btn" target="_blank">📁 GitHub</a>
+    </div>
+
+    <h2>📜 Лицензия GNU GPLv3</h2>
+    <div class="license-box">
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2007 Free Software Foundation, Inc. &lt;https://fsf.org/&gt;
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+                            Preamble
+The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+...
+(полный текст лицензии доступен на официальном сайте)
+    </div>
+    <p style="font-size:0.9rem; color:#aac8ff;">Этот проект распространяется под лицензией GPLv3. Вы можете свободно использовать, модифицировать и распространять его.</p>
+
+    <div class="footer-note">
+      DDLanguage © 2025 • Программирование без боли.
+    </div>
+  </div>
+</body>
+</html>
