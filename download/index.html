@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скачать DDLanguage — последняя версия</title>
+  <style>
+    body {
+      background: #0b101f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      color: white;
+    }
+
+    .download-card {
+      background: rgba(20, 28, 50, 0.8);
+      backdrop-filter: blur(24px);
+      border-radius: 3rem;
+      padding: 3rem 2.5rem;
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid #314b7c;
+      box-shadow: 0 30px 50px -10px #0055ff33;
+    }
+
+    .down-logo {
+      max-width: 150px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 15px #3b82f6);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #b1d4ff, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .version {
+      font-size: 1.5rem;
+      background: #1f3460;
+      display: inline-block;
+      padding: 0.3rem 1.5rem;
+      border-radius: 2rem;
+      margin: 1rem 0;
+      color: #d4e2ff;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #1850c0, #0a2890);
+      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+      border-radius: 4rem;
+      text-decoration: none;
+      margin: 2rem 0 1rem;
+      box-shadow: 0 15px 25px rgba(0, 80, 255, 0.5);
+      transition: 0.25s;
+      border: 1px solid #6080e0;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(145deg, #2563eb, #0f2d77);
+      box-shadow: 0 20px 30px #0037c0;
+      transform: translateY(-3px);
+    }
+
+    .info {
+      color: #b0c6f0;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      color: #a0c4ff;
+      margin-top: 2rem;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px dashed #5f8ae0;
+    }
+  </style>
+</head>
+<body>
+  <div class="download-card">
+    <!-- down-logo.png должен лежать в папке download -->
+    <img src="down-logo.png" alt="Download logo" class="down-logo">
+    <h1>DDLanguage</h1>
+    <div class="version">v1.0.0 (release 1.0)</div>
+    <p style="color:#cfdeff;">Нативный пакет для Debian/Ubuntu</p>
+
+    <!-- ССЫЛКА, которую можно менять при обновлении релиза -->
+    <a id="downloadLink" href="https://github.com/rond04kaegor-code/Debian-Distributions-Language/releases/download/release1.0/cppddl_1.0.0_amd64.deb" class="download-btn">
+      ⬇️ Скачать .deb
+    </a>
+
+    <div class="info">
+      Файл: cppddl_1.0.0_amd64.deb<br>
+      Лицензия: GPLv3 • Архитектура: amd64
+    </div>
+
+    <a href="../index.html" class="back-link">← На главную</a>
+    <a href="../old/index.html" style="margin-left: 1rem; color:#b9d0ff;">Предыдущие версии</a>
+  </div>
+
+  <!-- Скрипт для удобной смены ссылки в будущем (можно просто изменить data-url у кнопки) -->
+  <script>
+    // Чтобы поменять релиз, достаточно обновить ссылку в атрибуте href кнопки или ниже:
+    // Например: const newUrl = "https://github.com/.../release2.0/cppddl_2.0.0_amd64.deb";
+    // downloadBtn.href = newUrl;
+  </script>
+</body>
+</html>
